@@ -199,6 +199,7 @@ function! ErlangRename(mode)
                 execute ':bd '
                 execute ':e ' . new_filename
                 silent execute '!mv ' . full_current_filename . ' ' . full_current_filename. '.bak'
+                silent execute '!rm ' . current_filepath . '/*.swp'
                 redraw!
             else
                 let temp = &autoread
